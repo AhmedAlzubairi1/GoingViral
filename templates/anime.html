@@ -1,0 +1,82 @@
+
+{% extends "layout.html" %}
+{% block independentJSS %}
+<script type="text/javascript" src="{{ url_for('static', filename = 'anime.js') }}"></script>
+
+{% endblock %}
+
+{% block extraScript %}
+<script>
+    var cards = {{cards|tojson}} 
+
+
+</script>
+{% endblock %}
+
+{% block styles %}
+
+<style>
+
+    #title{
+        color:black;
+        text-align: center;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        font-size: 24px;
+
+    }
+    .top{
+        background-color: lightblue;
+        height:60px;
+
+    }
+    .warning{
+        background-color: red;
+        color:white;
+        
+
+    }
+    #reamsWarn{
+        display: inline-block;
+    }
+    #clientWarn{
+        display: inline-block;
+    }
+    .deleteButton{
+        background-color: red;
+
+
+    }
+
+
+</style>
+
+{% endblock %}
+
+
+
+{% block baseHTML %}
+
+
+    <div id="bio">
+
+        The site for <b>Anime Fans</b>, by <b>Anime Fans</b> 
+        <br>
+
+
+        Look up and explore various Anime Shows and Movies
+
+
+    </div>
+
+<br><br>
+
+<div class="container" id="display">
+
+
+</div>
+{% endblock %}
+
+
+
+

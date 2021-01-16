@@ -1,0 +1,98 @@
+
+{% extends "layout.html" %}
+{% block independentJSS %}
+<script type="text/javascript" src="{{ url_for('static', filename = 'Home.js') }}"></script>
+
+{% endblock %}
+
+{% block extraScript %}
+<script>
+
+
+</script>
+{% endblock %}
+
+{% block styles %}
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Pirata+One&display=swap');
+
+body {background-color: black;}
+
+h1   {color: white;
+font-family: 'Creepster', cursive;
+position: absolute;
+  left: 60%;
+  top: 25%;
+  margin-left: -180px;
+  font-size: 65px;}
+
+p    {color: white;
+font-family: 'Pirata One', cursive;
+position: absolute;
+  left: 73%;
+  top: 45%;
+  margin-left: -180px;
+  font-size: 20px;}
+
+.button {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  background-color: #2471A3;
+  font-family: 'Pirata One', cursive;
+}
+
+.button:hover {background-color: #2471A3}
+
+.button:active {
+  background-color: #2471A3;
+  transform: translateY(4px);
+}
+
+.button1 {background-color: #008CBA;
+position: absolute;
+  left: 74%;
+  top: 55%;
+  margin-left: -180px;} /* Blue */
+.button2 {background-color: #008CBA;
+position: absolute;
+  left: 73%;
+  top: 65%;
+  margin-left: -180px;} /* Blue */
+.button3 {background-color: #008CBA;
+position: absolute;
+  left: 75%;
+  top: 75%;
+  margin-left: -180px;} /* Blue */
+
+</style>
+
+{% endblock %}
+
+
+
+{% block baseHTML %}
+
+
+<h1>Going Viral!</h1>
+<p>A Battle of the Viruses</p>
+
+<button class="button button1">New Game</button>
+<button class="button button2">How To Play</button>
+<button class="button button3">Settings</button>
+
+{% endblock %}
+
+
+
+

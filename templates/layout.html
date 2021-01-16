@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+<!-- JQuery -->
+<script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+<!-- bootstrap same as before -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="{{ url_for('static', filename = 'layout.js') }}"></script>
+
+
+{% block independentJSS %}
+
+{% endblock %}
+
+{% block extraScript %}
+
+{% endblock %}
+
+{% block styles %}
+
+{% endblock %}
+
+
+
+
+
+</head>
+<body>
+<!--Source : https://getbootstrap.com/docs/4.0/components/navbar/-->
+<div id="baseHTML">
+{% block baseHTML %}
+
+{% endblock %}
+</div>
+
+    
+</body>
+</html>
+
+
+

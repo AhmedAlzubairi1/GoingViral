@@ -1,2 +1,2 @@
 # GoingViral
-Going viral card game for Biobus. 
+Going Viral card game for BioBus

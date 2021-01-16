@@ -1,0 +1,158 @@
+{% extends "layout.html" %}
+
+{% block independentJSS %}
+<script type="text/javascript" src="{{ url_for('static', filename = 'view.js') }}"></script>
+
+{% endblock %}
+{% block extraScript %}
+<script>
+    var id = {{id|tojson}} 
+    var currentAnime= {{currentAnime|tojson}}
+
+</script>
+{% endblock %}
+
+
+{% block styles %}
+
+<style>
+
+    #title{
+        color:black;
+        text-align: center;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        font-size: 24px;
+
+    }
+    .top{
+        background-color: lightblue;
+        height:60px;
+
+    }
+    .warning{
+        background-color: red;
+        color:white;
+        
+
+    }
+    #reamsWarn{
+        display: inline-block;
+    }
+    #clientWarn{
+        display: inline-block;
+    }
+    .divStructure{
+        display: inline-block;
+    }
+    .center{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    
+    }
+    .submitButtons{
+        visibility: hidden;
+    }
+    #undo{
+        visibility: hidden;
+    }
+
+</style>
+{% endblock %}
+
+
+{% block baseHTML %}
+
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-md-12 divStructure" id="title">
+                Naruto
+                
+            </div>
+        </div>
+
+
+        <div class="row">
+
+            <div class="col-md-12">
+                <img src="https://cdn.myanimelist.net/images/anime/13/17405.jpg" class= "center" id="animePic" alt="">
+
+                
+            </div>
+        </div>
+    
+
+        <div class="row">
+            <div class="col-md-1">
+                Info:
+            </div>
+            <div class="col-md-11" id="info">
+                Moments prior to Naruto Uzumaki's birth, a huge demon known as the Kyuubi, the Nine-Tailed Fox, attacked Konohagakure, the Hidden Leaf Village, and wreaked havoc. In order to put an end to the Kyuubi's rampage, the leader of the village, the Fourth Hokage, sacrificed his life and sealed the monstrous beast inside the newborn Naruto.Now, Naruto is a hyperactive and knuckle-headed ninja still living in Konohagakure. Shunned because of the Kyuubi inside him, Naruto struggles to find his place in the village, while his burning desire to become the Hokage of Konohagakure leads him not only to some great new friends, but also some deadly foes.                
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-1">
+                Released:
+            </div>
+
+            <div class="col-md-11" id="date">
+                2002
+                
+
+            </div>
+            <button id="editDate">edit-Change Date</button>
+
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-md-1">
+                Reviews:
+               <button id="editButton">Add Review</button>
+               <button id="undo">undo delete </button>
+
+ 
+            </div>
+            <div class="col-md-11" id="review">
+                it was okay tbh
+                
+            </div>
+        </div>
+        <div class="row">
+            <button class = "submitButtons" id="submitChanges" >Submit</button>
+            <button class = "submitButtons" id="discardChanges">Discard Changes</button>
+
+
+        </div>
+
+    </div>
+
+
+{% endblock %}
+
+
+
+
+<!--
+
+    <div id ="clientWarn" class = "divStructure">  
+        Name:
+
+    </div>
+    <br>
+    <div id ="f" class = "divStructure"> 
+        this
+        <div id ="d" class = "divStructure"> 
+            this:
+    
+        </div>
+
+    </div>
+
+
+
+-->

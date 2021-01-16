@@ -1,0 +1,99 @@
+
+
+
+{% extends "layout.html" %}
+
+{% block independentJSS %}
+<script type="text/javascript" src="{{ url_for('static', filename = 'create.js') }}"></script>
+
+{% endblock %}
+
+{% block extraScript %}
+<script>
+    var current_id = {{current_id|tojson}} 
+
+
+</script>
+{% endblock %}
+
+{% block styles %}
+
+
+<style>
+
+
+    .top{
+        background-color: lightblue;
+        height:60px;
+
+    }
+    .warning{
+        background-color: red;
+        color:white;
+        
+
+    }
+    #reamsWarn{
+        display: inline-block;
+    }
+    #clientWarn{
+        display: inline-block;
+    }
+    .divStructure{
+        display: inline-block;
+    }
+    .center{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    
+    }
+    .Notification{
+
+    }
+
+
+</style>
+
+{% endblock %}
+
+{% block baseHTML %}
+<div id="notify" class="Notification center">
+
+</div>
+<div>
+    Title:
+    <input id="title" placeholder="Type Title Here"  type = "text"/>
+
+</div>
+
+
+<div>
+    Image Url:
+    <input id="imageURL" placeholder="Type Image URL Here" type = "text"/>
+
+</div>
+Synposis
+<div>
+    <textarea id="synposisBox" rows="10" cols="50" placeholder="Type Synopsis Here" type = "text">
+</textarea>
+
+</div>
+
+<div>
+    Year of Release:
+    <input id="year" placeholder="Type Year of Release Here" type = "text"/>
+
+</div>
+<div>
+    Your Optional Review:
+    <input id="review" placeholder="Type Optional Review Here" type = "text"/>
+
+</div>
+<button id="create"> Submit</button>
+{% endblock %}
+
+
+
+
+
