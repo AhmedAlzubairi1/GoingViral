@@ -246,8 +246,7 @@ def drawCard():
     global deck
     #0 means none, 1 means review only, 2 means dateONLY, 3 means both
     playerNumber=request.get_json() 
-    #cardLocation = random.randint(0,len(deck)-1)
-    cardLocation=0
+    cardLocation = random.randint(0,len(deck)-1)
     newCard=deck[cardLocation]
     deck.pop(cardLocation)
     #After getting the card, i remove it from deck then reset the deck if needed

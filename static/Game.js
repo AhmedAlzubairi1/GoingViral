@@ -86,6 +86,19 @@ $(document).ready(function(){
             $("#notification_text").html("You must draw first!")
             return
          }
+         //Next check if user has an immediate 
+         if (current_player==1){
+            if (immediateExist(playerOne)){
+                $("#notification_text").html("ERROR. You must play all your immediate cards first!")
+                return
+            }
+        }
+        else{
+            if (immediateExist(playerTwo)){
+                $("#notification_text").html("ERROR. You must play all your immediate cards first!")
+                return
+            }        
+        }
         //I should draw based on the current player
         // I need to also do an ajax call to update the player info
         if (coinfection == false){
