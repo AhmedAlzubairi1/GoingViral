@@ -21,6 +21,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 
+/* Alright, now for the rest of the CSS */
 body {background-color: white;}
 
 h1   {color: black;
@@ -85,61 +86,21 @@ position: absolute;
 {% block baseHTML %}
 
 
-
-
-
 <div class="container-fluid">
-	<div class="row">
+  <div class="col-md-4"></div>
 		<div class="col-md-4">
-		</div>
-		<div class="col-md-4">
-			<div class="row">
-				<div class="col-md-12">
-					<div class="row">
             <div class="col-md-12">
-              <img id="home_image" alt="Bootstrap Image Preview" src="/static/images/virusGroup.png" width="250" height="250"/>
+              <img id="home_image" alt="Bootstrap Image Preview" src="/static/images/virusGroup.png" width="500" height="500", class="center" />
             </div>
-            <div class="row"></div>
-						<div class="col-md-12">
-              <h1>Going Viral!</h1>
-						</div>
-					</div>
-          <br><br><br><br>
-					<div class="row">
-						<div class="col-md-12">
-              <p>A Battle of the Viruses</p>
-						</div>
-					</div>
-				</div>
-			</div>
-      <br><br>
-			<div class="row">
-				<div class="col-md-12">
-					<div class="row">
-						<div class="col-md-12">
-              <button class="button button1" onclick="window.location.href='/game'">Start Game</button>
-
-						</div>
-					</div>
-          <br><br><br><br>
-					<div class="row">
-						<div class="col-md-12">
-              <button class="button button2" onclick="window.location.href='/howToPlay'">How To Play</button>
-
-						</div>
-					</div>
-          <br><br><br><br>
-					<div class="row">
-						<div class="col-md-12">
-              <button class="button button3" onclick="window.location.href='/settings'">Settings</button>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="col-md-4">
-		</div>
-	</div>
+    <div class="jumbotron text-center">
+      <h1>Going Viral!</h1>
+      <p>A Battle of the Viruses</p>
+      <button class="button button1" onclick="window.location.href='/game'">Start Game</button>
+      <button class="button button2" onclick="window.location.href='/howToPlay'">How To Play</button>
+      <button class="button button3" onclick="window.location.href='/settings'">Settings</button>
+    </div>
+  </div>
+	<div class="col-md-4"></div>
 </div>
 
 
