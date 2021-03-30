@@ -3,6 +3,9 @@ language: python
 python: 3.7
 cache: pypi
 
+git:
+  lfs_skip_smudge: true
+  
 install: 
   - pip install --upgrade pip && pip install -r requirements.txt
 
