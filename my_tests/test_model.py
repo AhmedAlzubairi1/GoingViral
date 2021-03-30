@@ -7,6 +7,8 @@ path.append(dir(path[0]))
 
 
 def test_drawOneCard():  # check to see if it works when people already exist
+    """ Tests if user can draw one card
+    """
     deck = [10, 20, 30]
     cards = [10, 20, 30]
     returnedCard = draw(deck, cards)
@@ -15,6 +17,8 @@ def test_drawOneCard():  # check to see if it works when people already exist
 
 
 def test_drawOneCardEmpty():  # check to see if it works when people already exist
+    """ Tests if the draw method resets an empty deck
+    """
     deck = [10]
     cards = [10, 20, 30]
     returnedCard = draw(deck, cards)
@@ -24,6 +28,8 @@ def test_drawOneCardEmpty():  # check to see if it works when people already exi
 
 
 def test_newDeck():
+    """Tests if you can reset a deck
+    """
     tempCards = [
         {
             "name": "Hospitalization",
