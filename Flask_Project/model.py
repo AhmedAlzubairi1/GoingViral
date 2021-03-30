@@ -212,8 +212,7 @@ def draw(deck, cardSet):
     :rtype: dict
     """
     # Should take random card then remove it.
-    #cardLocation = random.randint(0, len(deck) - 1)
-    cardLocation=0
+    cardLocation = random.randint(0, len(deck) - 1)
     newCard = deck[cardLocation]
     deck.pop(cardLocation)
     # After getting the card, i remove it from deck then reset the deck if
