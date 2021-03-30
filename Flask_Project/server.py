@@ -1,4 +1,3 @@
-import re
 import copy
 import json
 import random
@@ -6,6 +5,7 @@ from Player import Player
 from flask import Flask
 from flask import render_template
 from flask import Response, request, jsonify
+from model import draw
 app = Flask(__name__)
 mark_as_deleted={
 
@@ -231,8 +231,6 @@ def newGame():
     deck=copy.deepcopy(cards)
     playerOne=Player(1,"flu")
     playerTwo=Player(2,"ebola")
-    print(json.dumps(playerTwo.__dict__))
-    print(type(json.dumps(playerTwo.__dict__)))
     return render_template('Game.html', deck=deck, playerOne=json.loads(json.dumps(playerOne.__dict__)), playerTwo=json.loads(json.dumps(playerTwo.__dict__)))
 @app.route('/howToPlay')
 def howToPlay():
@@ -244,35 +242,14 @@ def settings():
 @app.route('/draw', methods=['GET', 'POST'])
 def drawCard():
     global deck
-    #0 means none, 1 means review only, 2 means dateONLY, 3 means both
-    playerNumber=request.get_json() 
-    cardLocation = random.randint(0,len(deck)-1)
-    newCard=deck[cardLocation]
-    deck.pop(cardLocation)
-    #After getting the card, i remove it from deck then reset the deck if needed
-    if len(deck)==0:
-        deck=copy.deepcopy(cards)
-    return jsonify(drawnCard=newCard) #we can now do ["data"] in js to reference data, or ["bob"] to reference 1
+    return jsonify(drawnCard=draw(deck,cards))
 @app.route('/draw2', methods=['GET', 'POST'])
 def draw2Card():
     global deck
-    #0 means none, 1 means review only, 2 means dateONLY, 3 means both
-    cardLocation = random.randint(0,len(deck)-1)
-    cards=[]
-    cards.append(deck[cardLocation])
-    deck.pop(cardLocation)
-    #After getting the card, i remove it from deck then reset the deck if needed
-    if len(deck)==0:
-        deck=copy.deepcopy(cards)
-    # Now just do draw mechanism again
-    cardLocation = random.randint(0,len(deck)-1)
-    cards.append(deck[cardLocation])
-    deck.pop(cardLocation)
-    #After getting the card, i remove it from deck then reset the deck if needed
-    if len(deck)==0:
-        deck=copy.deepcopy(cards)
-    print(cards)
-    return jsonify(cards=cards) #we can now do ["data"] in js to reference data, or ["bob"] to reference 1
+    twoCards=[]
+    twoCards.append(draw(deck,cards))
+    twoCards.append(draw(deck,cards))
+    return jsonify(cards=twoCards) #we can now do ["data"] in js to reference data, or ["bob"] to reference 1
 
 
 @app.route('/update', methods=['GET', 'POST'])
