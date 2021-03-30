@@ -73,4 +73,4 @@ And then open the index.html file to see the report
 - How to play tutorial to show you how to play the game.
 
 ## Documentation
-Click read the docs shield above and see comments on the code. 
+Click readthedocs shield above and see comments on the code. 
