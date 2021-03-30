@@ -1,5 +1,4 @@
 [![Build Status](https://www.travis-ci.com/AhmedAlzubairi1/GoingViral.svg?token=YSFGTzzMtxRwyUQUyVwr&branch=master)](https://www.travis-ci.com/AhmedAlzubairi1/GoingViral)
-[![codecov](https://codecov.io/gh/AhmedAlzubairi1/GoingViral/branch/master/graph/badge.svg?token=QEJHX61Z6W)](https://codecov.io/gh/AhmedAlzubairi1/GoingViral)
 # GoingViral
 Going Viral card game for BioBus
 
