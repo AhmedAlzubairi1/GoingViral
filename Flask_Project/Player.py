@@ -31,7 +31,7 @@ class Player():
         self.stageImage = self.stageImageList[0]
 
     def advanceStage(self, data):
-        """ Given the new updated data, the player updates the data and tests if the stage can be updated. It needs enough atp to be updated. This is checked based on the 
+        """ Given the new updated data, the player updates the data and tests if the stage can be updated. It needs enough atp to be updated. This is checked based on the
         stage limits of the individual virus.
 
         :param data: A dictonary showing the state of the player

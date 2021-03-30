@@ -53,11 +53,6 @@ def howToPlay():
     """
     return render_template('HowToPlay.html')
 
-'''
-@app.route('/settings')
-def settings():
-    return render_template('Settings.html')
-'''
 
 @app.route('/draw', methods=['GET', 'POST'])
 def drawCard():
@@ -86,7 +81,7 @@ def draw2Card():
 
 @app.route('/update', methods=['GET', 'POST'])
 def update():
-    """ On the /update endpoint, it updates the player one or player two data in the backend side and then returns the json version 
+    """ On the /update endpoint, it updates the player one or player two data in the backend side and then returns the json version
     of them to be updated in the front end side
 
     :return: JSON format of player data
@@ -103,7 +98,7 @@ def update():
 
 @app.route('/nextStage', methods=['GET', 'POST'])
 def nextStage():
-    """ On the /nextStage end point, it tests to see if the current player's virus can be advacned. If it can, it goes to the next stage and updates the virus stage. If not, 
+    """ On the /nextStage end point, it tests to see if the current player's virus can be advacned. If it can, it goes to the next stage and updates the virus stage. If not,
     It lets the user know and doesnt't update the stage.
 
     :return: JSON formate of player data
