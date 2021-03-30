@@ -1,14 +1,73 @@
 [![Build Status](https://www.travis-ci.com/AhmedAlzubairi1/GoingViral.svg?token=YSFGTzzMtxRwyUQUyVwr&branch=master)](https://www.travis-ci.com/AhmedAlzubairi1/GoingViral)
 # GoingViral
-Going Viral card game for BioBus
+This is the repo of Biobus' Going Viral web based game. Players would get to pick viruses and compete to see which one can reach past stage 5 first using cards that simulate their behavior.
+![Screenshot](mainPic.png)
 
-How to run:
-Go to the Going Viral directory and run this command: 
 
+
+
+## Installation
+
+```
+pip install -r requirements.txt
+```
+
+## Running the Game
+
+To run the sample terminal front end of the game do : 
+
+```
+cd Flask_Project
 python3 server.py
-
-
+```
 Then go to http://127.0.0.1:5000/ on your browser
 
-Live site:
+## Live Website
+To interact with the deployed public website, go to this link:
 https://goingviralapp.herokuapp.com/
+![](demo.gif)
+
+
+Run the following to see the bug reports. Check the cleaned_bug_checker_report directory for the reports
+
+```
+./create_bug_report.sh
+```
+
+Run the following to see the check style reports. Check the cleaned_style_checker_report directory for the reports
+
+```
+./create_style_checker_report.sh
+```
+
+
+Run the testing suite with this command:
+```
+python -m pytest my_tests/
+```
+
+
+
+
+
+Run the coverage suit with these command sequence:
+```
+coverage run -m pytest my_tests/
+coverage report
+```
+If you want to see the coverage suit report as a file instead of on terminal run the following commands after running the previous two commands:
+```
+coverage html
+cd htmlcov
+```
+And then open the index.html file to see the report
+
+
+
+## Features
+- You can play the card game with someone on the same computer. Currently can decide between the Flu or the Ebola virus.
+- How to play tutorial to show you how to play the game.
+
+## Documentation
+NOTE to self: Doucmentation is in code, but it would be cool to add read the docs for it.
+- [Read the Docs](https://chess1.readthedocs.io/en/latest/) is where you will find a detailed explanation of what each method/function does
