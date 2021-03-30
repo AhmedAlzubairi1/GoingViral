@@ -3,7 +3,6 @@ cleaned_style_checker_report/
 .coverage
 htmlcov/
 .DS_Store
-__pycache__
 *.pyc
 # .coverage
 
