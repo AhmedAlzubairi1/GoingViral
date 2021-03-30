@@ -62,8 +62,7 @@ def drawCard():
     :rtype: dict
     """
     global deck
-    t=draw(deck, cards)
-    return jsonify(drawnCard=t)
+    return jsonify(drawnCard=draw(deck, cards))
 
 
 @app.route('/draw2', methods=['GET', 'POST'])
