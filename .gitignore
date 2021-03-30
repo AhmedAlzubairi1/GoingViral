@@ -1,4 +1,5 @@
-sqlite_db
+cleaned_bug_checker_report/
+cleaned_style_checker_report/
 .DS_Store
 __pycache__
 *.pyc
