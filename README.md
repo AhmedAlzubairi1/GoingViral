@@ -1,4 +1,5 @@
 [![Build Status](https://www.travis-ci.com/AhmedAlzubairi1/GoingViral.svg?token=YSFGTzzMtxRwyUQUyVwr&branch=master)](https://www.travis-ci.com/AhmedAlzubairi1/GoingViral)
+[![Documentation Status](https://readthedocs.com/projects/biobus-goingviral/badge/?version=latest&token=c4feb5ab6096c25abf56890f3c8f0b0831f23b613644612f5e3f0efea13780b9)](https://biobus-goingviral.readthedocs-hosted.com/en/latest/?badge=latest)
 # GoingViral
 This is the repo of Biobus' Going Viral web based game. Players would get to pick viruses and compete to see which one can reach past stage 5 first using cards that simulate their behavior.
 ![Screenshot](mainPic.png)
@@ -72,5 +73,4 @@ And then open the index.html file to see the report
 - How to play tutorial to show you how to play the game.
 
 ## Documentation
-NOTE to self: Doucmentation is in code, but it would be cool to add read the docs for it.
-- [Read the Docs](https://chess1.readthedocs.io/en/latest/) is where you will find a detailed explanation of what each method/function does
+Click read the docs shield above and see comments on the code. 
