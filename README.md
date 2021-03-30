@@ -53,8 +53,11 @@ python -m pytest my_tests/
 Run the coverage suit with these command sequence:
 ```
 coverage run -m pytest my_tests/
-coverage report
+coverage report --omit=Flask_Project/server.py
 ```
+NOTE: You omit the server.py because the info you get from server.py is already the info you get from the other files since server.py just calls methods from the other files w/ the addition to very simple if/else logic. As a result of this MVC layout, we can ignore that one file since all the relevant logic code is tested on the other files by the coverage report. 
+
+
 If you want to see the coverage suit report as a file instead of on terminal run the following commands after running the previous two commands:
 ```
 coverage html
