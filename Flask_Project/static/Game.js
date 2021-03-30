@@ -493,20 +493,33 @@ function playGeneExchange(index,player,card){
     console.log(playerOne)
     console.log(playerTwo)
     if (player["player"]==1){
-        index = Math.floor((Math.random() * playerTwo["hand"].length))
-        card=playerTwo["hand"][index]
-        playerTwo["hand"].splice(index,1)
-        playerOne["hand"].push(card)
-        $("#notification_text").html("Gene Exchange Activated, took " + card["name"] + " From enemy player")
+        // I need to check if there is a possible card
+        if (playerTwo["hand"].length!=0){
+            index = Math.floor((Math.random() * playerTwo["hand"].length))
+            card=playerTwo["hand"][index]
+            playerTwo["hand"].splice(index,1)
+            playerOne["hand"].push(card)
+            $("#notification_text").html("Gene Exchange Activated, took " + card["name"] + " From enemy player")
+    
+        }
+        else{
+            $("#notification_text").html("Wasted Gene Exchange card :(. Player didn't have any cards to take")
+
+        }
 
 
     }
     else{
-        index = Math.floor((Math.random() * playerOne["hand"].length))
-        card=playerOne["hand"][index]
-        playerOne["hand"].splice(index,1)
-        playerTwo["hand"].push(card)
-        $("#notification_text").html("Gene Exchange Activated, took " + card["name"] + " From enemy player")
+        if (playerOne["hand"].length!=0){            
+            index = Math.floor((Math.random() * playerOne["hand"].length))
+            card=playerOne["hand"][index]
+            playerOne["hand"].splice(index,1)
+            playerTwo["hand"].push(card)
+            $("#notification_text").html("Gene Exchange Activated, took " + card["name"] + " From enemy player")
+        }
+        else{
+            $("#notification_text").html("Wasted Gene Exchange card :(. Player didn't have any cards to take")
+        }
     }
     console.log(playerOne)
     console.log(playerTwo)

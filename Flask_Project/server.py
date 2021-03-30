@@ -48,15 +48,18 @@ def settings():
 @app.route('/draw', methods=['GET', 'POST'])
 def drawCard():
     global deck
-    return jsonify(drawnCard=draw(deck, cards))
+    t = draw(deck, cards)
+    print((t,deck,cards))
+    return jsonify(drawnCard=t)
 
 
 @app.route('/draw2', methods=['GET', 'POST'])
 def draw2Card():
     global deck
     twoCards = []
+    twoCards.append(draw(deck, cards)) 
     twoCards.append(draw(deck, cards))
-    twoCards.append(draw(deck, cards))
+    print(twoCards)
     # we can now do ["data"] in js to reference data, or ["bob"] to reference 1
     return jsonify(cards=twoCards)
 
