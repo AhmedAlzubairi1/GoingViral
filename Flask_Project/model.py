@@ -2,6 +2,15 @@ import copy
 import random
 cards = [
     {
+        "name": "Quarantine",
+        "atp": 0,
+        "immediate": True,
+        "hold": False,
+        "treatment": False,
+        "image": "/static/images/card/quaranine.png"
+
+    },
+    {
         "name": "Hospitalization",
         "atp": 3,
         "immediate": False,
@@ -36,15 +45,6 @@ cards = [
         "hold": True,
         "treatment": False,
         "image": "/static/images/card/rapidgrowth.png"
-
-    },
-    {
-        "name": "Quarantine",
-        "atp": 0,
-        "immediate": True,
-        "hold": False,
-        "treatment": False,
-        "image": "/static/images/card/quaranine.png"
 
     },
     {
@@ -212,7 +212,8 @@ def draw(deck, cardSet):
     :rtype: dict
     """
     # Should take random card then remove it.
-    cardLocation = random.randint(0, len(deck) - 1)
+    #cardLocation = random.randint(0, len(deck) - 1)
+    cardLocation=0
     newCard = deck[cardLocation]
     deck.pop(cardLocation)
     # After getting the card, i remove it from deck then reset the deck if

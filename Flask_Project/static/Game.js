@@ -584,6 +584,8 @@ function playQuarantine(index,player,card){
         contentType: "application/json; charset=utf-8",
         data : JSON.stringify(player),
         success: function(result){
+            t=result
+            console.log(result["player"])
             if (result["downGraded"]==true){
                 $("#notification_text").html("Quarantine activated, lowering your stage!")
             }

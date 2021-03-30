@@ -95,7 +95,6 @@ class Player():
         """
         if self.stage <= 1:
             return False
-        self.update(data)
         self.stage -= 1
         self.stageImage = self.stageImageList[self.stage]
         return True

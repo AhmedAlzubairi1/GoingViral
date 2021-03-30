@@ -62,7 +62,8 @@ def drawCard():
     :rtype: dict
     """
     global deck
-    return jsonify(drawnCard=draw(deck, cards))
+    t=draw(deck, cards)
+    return jsonify(drawnCard=t)
 
 
 @app.route('/draw2', methods=['GET', 'POST'])
@@ -132,6 +133,7 @@ def quarantine():
     data = request.get_json()
     if data["player"] == 1:
         # If im playerOne and I have to downgrade, I just give back to the deck the quarantine card.
+        playerOne.update(data)
         downGraded = playerOne.quaranine(data)
         if not downGraded:
             deck.append({"name": "Quarantine",
@@ -146,6 +148,7 @@ def quarantine():
                     playerOne.__dict__)),
             downGraded=downGraded)
     else:
+        playerTwo.update(data)
         downGraded = playerTwo.quaranine(data)
         if not downGraded:
             deck.append({"name": "Quarantine",
