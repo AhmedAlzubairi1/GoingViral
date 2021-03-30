@@ -7,6 +7,10 @@ htmlcov/
 # .coverage
 
 # Byte-compiled / optimized / DLL files
+__pycache__
+my_tests/__pycache__
+my_tests/.pytest_cache
+
 __pycache__/
 *.py[cod]
 *$py.class
