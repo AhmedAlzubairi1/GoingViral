@@ -30,7 +30,7 @@ def test_drawOneCardEmpty():  # check to see if it works when people already exi
 def test_newDeck():
     """Tests if you can reset a deck
     """
-    tempCards = [
+    tempCard = [
         {
             "name": "Quarantine",
             "atp": 0,
@@ -186,4 +186,4 @@ def test_newDeck():
 
         }
     ]
-    assert newDeck() == tempCards
+    assert newDeck() == tempCard
