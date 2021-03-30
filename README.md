@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.com/AhmedAlzubairi1/GoingViral.svg?token=YSFGTzzMtxRwyUQUyVwr&branch=master)](https://travis-ci.com/AhmedAlzubairi1/GoingViral)
 [![Documentation Status](https://readthedocs.com/projects/biobus-goingviral/badge/?version=latest&token=c4feb5ab6096c25abf56890f3c8f0b0831f23b613644612f5e3f0efea13780b9)](https://biobus-goingviral.readthedocs-hosted.com/en/latest/?badge=latest)
 # GoingViral
 This is the repo of Biobus's Going Viral web based game. Players would get to pick viruses and compete to see which one can reach past stage 5 first using cards that simulate their behavior.
