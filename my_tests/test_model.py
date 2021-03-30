@@ -32,6 +32,15 @@ def test_newDeck():
     """
     tempCards = [
         {
+            "name": "Quarantine",
+            "atp": 0,
+            "immediate": True,
+            "hold": False,
+            "treatment": False,
+            "image": "/static/images/card/quaranine.png"
+
+        },
+        {
             "name": "Hospitalization",
             "atp": 3,
             "immediate": False,
@@ -66,15 +75,6 @@ def test_newDeck():
             "hold": True,
             "treatment": False,
             "image": "/static/images/card/rapidgrowth.png"
-
-        },
-        {
-            "name": "Quarantine",
-            "atp": 0,
-            "immediate": True,
-            "hold": False,
-            "treatment": False,
-            "image": "/static/images/card/quaranine.png"
 
         },
         {
