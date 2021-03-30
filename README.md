@@ -12,7 +12,7 @@ This is the repo of Biobus's Going Viral web based game. Players would get to pi
 pip install -r requirements.txt
 ```
 
-## Running the Games
+## Running the Going Viral Card Game
 
 To run the sample terminal front end of the game do : 
 
