@@ -43,6 +43,7 @@ class Player():
         self.stage=int(data["stage"])
         self.atp=int(data['atp'])
         self.stageImage=data["stageImage"]
+        print(self.stage)
     def quaranine(self,data):
         if self.stage<=1:
             return False
