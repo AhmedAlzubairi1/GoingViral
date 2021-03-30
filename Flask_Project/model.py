@@ -7,5 +7,5 @@ def draw(deck,cardSet):
     deck.pop(cardLocation)
     #After getting the card, i remove it from deck then reset the deck if needed
     if len(deck)==0:
-        deck=copy.deepcopy(cardSet)
+        deck[:]=copy.deepcopy(cardSet)
     return newCard
