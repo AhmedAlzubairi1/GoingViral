@@ -193,10 +193,24 @@ This is stuff for rest of the virus
 
 
 def newDeck():
+    """ Returns an original copy of the deck of cards
+
+    :return: Resetted deck of cads
+    :rtype: list[dict]
+    """
     return copy.deepcopy(cards)
 
 
 def draw(deck, cardSet):
+    """ Given a deck and cardset, a random card is popped from the deck and returned to user. It also resets the deck if it then becomes empty
+
+    :param deck: Current deck
+    :type deck: list[dict]
+    :param cardSet: Original deck
+    :type cardSet: list[dict]
+    :return: Drawn card
+    :rtype: dict
+    """
     # Should take random card then remove it.
     cardLocation = random.randint(0, len(deck) - 1)
     newCard = deck[cardLocation]
