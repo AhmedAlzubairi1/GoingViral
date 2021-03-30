@@ -55,7 +55,7 @@ def drawCard():
 def draw2Card():
     global deck
     twoCards = []
-    twoCards.append(draw(deck, cards)) 
+    twoCards.append(draw(deck, cards))
     twoCards.append(draw(deck, cards))
     return jsonify(cards=twoCards)
 

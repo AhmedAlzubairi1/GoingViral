@@ -1,0 +1,16 @@
+dist: xenial
+language: python
+python: 3.7
+cache: pypi
+
+install: 
+  - pip install --upgrade pip && pip install -r requirements.txt
+
+script:
+  - python3.7 -m flake8 Game/ my_tests/
+  - coverage run --source=my_tests/,Flask_Project/ -m pytest my_tests/ # Run the tests and check for test coverage.
+  - coverage report 
+
+branches:
+  only:
+  - master

@@ -1,4 +1,3 @@
-from Flask_Project.model import draw
 from sys import path
 from os.path import dirname as dir
 from Flask_Project.Player import Player
