@@ -18,7 +18,6 @@ playerTwo = None
 @app.route('/')
 def homeScreen():
     return render_template('Home.html')
-#    return render_template('home.html', cards=animeInfo[-9:])
 
 
 @app.route('/game')
@@ -49,7 +48,6 @@ def settings():
 def drawCard():
     global deck
     t = draw(deck, cards)
-    print((t,deck,cards))
     return jsonify(drawnCard=t)
 
 
@@ -59,8 +57,6 @@ def draw2Card():
     twoCards = []
     twoCards.append(draw(deck, cards)) 
     twoCards.append(draw(deck, cards))
-    print(twoCards)
-    # we can now do ["data"] in js to reference data, or ["bob"] to reference 1
     return jsonify(cards=twoCards)
 
 
@@ -98,6 +94,7 @@ def nextStage():
 def quarantine():
     data = request.get_json()
     if data["player"] == 1:
+        # If im playerOne and I have to downgrade, I just give back to the deck the quarantine card.
         downGraded = playerOne.quaranine(data)
         if not downGraded:
             deck.append({"name": "Quarantine",
@@ -106,7 +103,6 @@ def quarantine():
                          "hold": False,
                          "treatment": False,
                          "image": "/static/images/card/quaranine.png"})
-        print(deck)
         return jsonify(
             player=json.loads(
                 json.dumps(
@@ -121,7 +117,6 @@ def quarantine():
                          "hold": False,
                          "treatment": False,
                          "image": "/static/images/card/quaranine.png"})
-        print(deck)
         return jsonify(
             player=json.loads(
                 json.dumps(
