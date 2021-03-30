@@ -7,7 +7,7 @@ install:
   - pip install --upgrade pip && pip install -r requirements.txt
 
 script:
-  - python3.7 -m flake8 Game/ my_tests/
+  - python3.7 -m flake8 Flask_Project/ my_tests/
   - coverage run --source=my_tests/,Flask_Project/ -m pytest my_tests/ # Run the tests and check for test coverage.
   - coverage report 
 
