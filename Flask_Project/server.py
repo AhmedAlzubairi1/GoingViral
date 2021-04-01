@@ -33,6 +33,7 @@ def newGame():
     :rtype: str
     """
     global deck, playerOne, playerTwo
+    print("hello----------------------------------------------")
     deck = newDeck()
     playerOne = Player(1, "flu")
     playerTwo = Player(2, "ebola")
