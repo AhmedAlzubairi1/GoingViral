@@ -66,6 +66,7 @@ def drawCard():
     """
     global deck
     print("DRAW++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
+    print(type(deck))
     return jsonify(drawnCard=draw(deck, cards))
 
 
