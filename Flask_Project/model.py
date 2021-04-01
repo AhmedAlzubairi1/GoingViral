@@ -198,6 +198,7 @@ def newDeck():
     :return: Resetted deck of cads
     :rtype: list[dict]
     """
+    print(f'new deck is returning type {type(copy.deepcopy(cards))}')
     return copy.deepcopy(cards)
 
 

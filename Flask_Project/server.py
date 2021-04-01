@@ -34,7 +34,9 @@ def newGame():
     """
     global deck, playerOne, playerTwo
     print("hello----------------------------------------------")
+    print(type(deck))
     deck = newDeck()
+    print(type(deck))
     playerOne = Player(1, "flu")
     playerTwo = Player(2, "ebola")
     return render_template(
