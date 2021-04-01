@@ -1,5 +1,6 @@
 cleaned_bug_checker_report/
-cleaned_style_checker_report/
+cleaned_style_checker_report
+goingviralapp/
 .coverage
 htmlcov/
 .DS_Store
