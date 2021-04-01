@@ -63,6 +63,7 @@ def drawCard():
     :rtype: dict
     """
     global deck
+    print("DRAW++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
     return jsonify(drawnCard=draw(deck, cards))
 
 
