@@ -2,7 +2,7 @@ import json
 from Player import Player
 from flask import Flask
 from flask import render_template
-from flask import request, jsonify
+from flask import requests, jsonify
 from model import draw, newDeck
 app = Flask(__name__)
 mark_as_deleted = {
@@ -92,7 +92,7 @@ def update():
     :return: JSON format of player data
     :rtype: dict
     """
-    data = request.get_json()
+    data = requests.get_json()
     if data["number"] == 1:
         playerOne.update(data["player"])
         return jsonify(player=json.loads(json.dumps(playerOne.__dict__)))
@@ -109,7 +109,7 @@ def nextStage():
     :return: JSON formate of player data
     :rtype: dict
     """
-    data = request.get_json()
+    data = requests.get_json()
     if data["number"] == 1:
         upGraded = playerOne.advanceStage(data["player"])
         return jsonify(
@@ -134,7 +134,7 @@ def quarantine():
     :return: JSON format of player's updated state
     :rtype: dict
     """
-    data = request.get_json()
+    data = requests.get_json()
     if data["player"] == 1:
         # If im playerOne and I have to downgrade, I just give back to the deck the quarantine card.
         playerOne.update(data)
