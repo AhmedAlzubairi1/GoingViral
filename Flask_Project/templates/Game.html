@@ -1,300 +1,330 @@
+{% extends "layout.html" %} {% block independentJSS %}
 
-{% extends "layout.html" %}
-{% block independentJSS %}
+<script
+  type="text/javascript"
+  src="{{ url_for('static', filename = 'Game.js') }}"
+></script>
 
-<script type="text/javascript" src="{{ url_for('static', filename = 'Game.js') }}"></script>
-
-{% endblock %}
-
-{% block extraScript %}
+{% endblock %} {% block extraScript %}
 <script>
-    var deck={{deck|tojson}} 
-    var playerOne={{playerOne|tojson}} 
-    var playerTwo={{playerTwo|tojson}} 
+  var deck={{deck|tojson}}
+  var playerOne={{playerOne|tojson}}
+  var playerTwo={{playerTwo|tojson}}
 </script>
-{% endblock %}
-
-{% block styles %}
+{% endblock %} {% block styles %}
 <style>
-.button{
+  .button {
     border: none;
-  color: white;
-  background-color: orange;
-  padding: 16px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 20px;
-  margin: 4px 2px;
-  transition-duration: 0.4s;
-  cursor: pointer;
-  border: 2px solid orange;
+    color: white;
+    background-color: orange;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border: 2px solid orange;
+  }
 
-}
-
-/*The following code is for the action buttons  Source: https://bootsnipp.com/snippets/ZkPOn*/
-.extraButton {
-    background-color: #4CAF50; /* Green */
-  border: none;
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 10px;
-  margin: 4px 2px;
-  transition-duration: 0.4s;
-  cursor: pointer;
-  background-color: white;
-  color: black;
-  border: 2px solid #555555;
-}
-.extraButton:hover {
-  background-color: #555555;
-  color: white;
-}
-.btn3d {
-    position:relative;
+  /*The following code is for the action buttons  Source: https://bootsnipp.com/snippets/ZkPOn*/
+  .extraButton {
+    background-color: #4caf50; /* Green */
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 10px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    border: 2px solid #555555;
+  }
+  .extraButton:hover {
+    background-color: #555555;
+    color: white;
+  }
+  .btn3d {
+    position: relative;
     top: -6px;
-    border:0;
-     transition: all 40ms linear;
-     margin-top:10px;
-     margin-bottom:10px;
-     margin-left:2px;
-     margin-right:2px;
-}
-.btn3d:active:focus,
-.btn3d:focus:hover,
-.btn3d:focus {
-    -moz-outline-style:none;
-         outline:medium none;
-}
-.bob{
-    
+    border: 0;
+    transition: all 40ms linear;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 2px;
+    margin-right: 2px;
+  }
+  .btn3d:active:focus,
+  .btn3d:focus:hover,
+  .btn3d:focus {
+    -moz-outline-style: none;
+    outline: medium none;
+  }
+  .bob {
     background-color: yellow;
-}
-.btn3d:active, .btn3d.active {
-    top:2px;
-}
-.btn3d.btn-white {
+  }
+  .btn3d:active,
+  .btn3d.active {
+    top: 2px;
+  }
+  .btn3d.btn-white {
     color: #666666;
-    box-shadow:0 0 0 1px #ebebeb inset, 0 0 0 2px rgba(255,255,255,0.10) inset, 0 8px 0 0 #f5f5f5, 0 8px 8px 1px rgba(0,0,0,.2);
-    background-color:#fff;
-}
-.btn3d.btn-white:active, .btn3d.btn-white.active {
+    box-shadow: 0 0 0 1px #ebebeb inset,
+      0 0 0 2px rgba(255, 255, 255, 0.1) inset, 0 8px 0 0 #f5f5f5,
+      0 8px 8px 1px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+  }
+  .btn3d.btn-white:active,
+  .btn3d.btn-white.active {
     color: #666666;
-    box-shadow:0 0 0 1px #ebebeb inset, 0 0 0 1px rgba(255,255,255,0.15) inset, 0 1px 3px 1px rgba(0,0,0,.1);
-    background-color:#fff;
-}
-.btn3d.btn-default {
+    box-shadow: 0 0 0 1px #ebebeb inset,
+      0 0 0 1px rgba(255, 255, 255, 0.15) inset,
+      0 1px 3px 1px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+  }
+  .btn3d.btn-default {
     color: #666666;
-    box-shadow:0 0 0 1px #ebebeb inset, 0 0 0 2px rgba(255,255,255,0.10) inset, 0 8px 0 0 #BEBEBE, 0 8px 8px 1px rgba(0,0,0,.2);
-    background-color:#f9f9f9;
-}
-.btn3d.btn-default:active, .btn3d.btn-default.active {
+    box-shadow: 0 0 0 1px #ebebeb inset,
+      0 0 0 2px rgba(255, 255, 255, 0.1) inset, 0 8px 0 0 #bebebe,
+      0 8px 8px 1px rgba(0, 0, 0, 0.2);
+    background-color: #f9f9f9;
+  }
+  .btn3d.btn-default:active,
+  .btn3d.btn-default.active {
     color: #666666;
-    box-shadow:0 0 0 1px #ebebeb inset, 0 0 0 1px rgba(255,255,255,0.15) inset, 0 1px 3px 1px rgba(0,0,0,.1);
-    background-color:#f9f9f9;
-}
-.btn3d.btn-primary {
-    box-shadow:0 0 0 1px #417fbd inset, 0 0 0 2px rgba(255,255,255,0.15) inset, 0 8px 0 0 #4D5BBE, 0 8px 8px 1px rgba(0,0,0,0.5);
-    background-color:#4274D7;
-}
-.btn3d.btn-primary:active, .btn3d.btn-primary.active {
-    box-shadow:0 0 0 1px #417fbd inset, 0 0 0 1px rgba(255,255,255,0.15) inset, 0 1px 3px 1px rgba(0,0,0,0.3);
-    background-color:#4274D7;
-}
-.btn3d.btn-success {
-    box-shadow:0 0 0 1px #31c300 inset, 0 0 0 2px rgba(255,255,255,0.15) inset, 0 8px 0 0 #5eb924, 0 8px 8px 1px rgba(0,0,0,0.5);
-    background-color:#78d739;
-}
-.btn3d.btn-success:active, .btn3d.btn-success.active {
-    box-shadow:0 0 0 1px #30cd00 inset, 0 0 0 1px rgba(255,255,255,0.15) inset, 0 1px 3px 1px rgba(0,0,0,0.3);
+    box-shadow: 0 0 0 1px #ebebeb inset,
+      0 0 0 1px rgba(255, 255, 255, 0.15) inset,
+      0 1px 3px 1px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+  }
+  .btn3d.btn-primary {
+    box-shadow: 0 0 0 1px #417fbd inset,
+      0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 8px 0 0 #4d5bbe,
+      0 8px 8px 1px rgba(0, 0, 0, 0.5);
+    background-color: #4274d7;
+  }
+  .btn3d.btn-primary:active,
+  .btn3d.btn-primary.active {
+    box-shadow: 0 0 0 1px #417fbd inset,
+      0 0 0 1px rgba(255, 255, 255, 0.15) inset,
+      0 1px 3px 1px rgba(0, 0, 0, 0.3);
+    background-color: #4274d7;
+  }
+  .btn3d.btn-success {
+    box-shadow: 0 0 0 1px #31c300 inset,
+      0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 8px 0 0 #5eb924,
+      0 8px 8px 1px rgba(0, 0, 0, 0.5);
     background-color: #78d739;
-}
-.btn3d.btn-info {
-    box-shadow:0 0 0 1px #00a5c3 inset, 0 0 0 2px rgba(255,255,255,0.15) inset, 0 8px 0 0 #348FD2, 0 8px 8px 1px rgba(0,0,0,0.5);
-    background-color:#39B3D7;
-}
-.btn3d.btn-info:active, .btn3d.btn-info.active {
-    box-shadow:0 0 0 1px #00a5c3 inset, 0 0 0 1px rgba(255,255,255,0.15) inset, 0 1px 3px 1px rgba(0,0,0,0.3);
-    background-color: #39B3D7;
-}
-.btn3d.btn-warning {
-    box-shadow:0 0 0 1px #d79a47 inset, 0 0 0 2px rgba(255,255,255,0.15) inset, 0 8px 0 0 #D79A34, 0 8px 8px 1px rgba(0,0,0,0.5);
-    background-color:#FEAF20;
-}
-.btn3d.btn-warning:active, .btn3d.btn-warning.active {
-    box-shadow:0 0 0 1px #d79a47 inset, 0 0 0 1px rgba(255,255,255,0.15) inset, 0 1px 3px 1px rgba(0,0,0,0.3);
-    background-color: #FEAF20;
-}
-.btn3d.btn-danger {
-    box-shadow:0 0 0 1px #b93802 inset, 0 0 0 2px rgba(255,255,255,0.15) inset, 0 8px 0 0 #AA0000, 0 8px 8px 1px rgba(0,0,0,0.5);
-    background-color:#D73814;
-}
-.btn3d.btn-danger:active, .btn3d.btn-danger.active {
-    box-shadow:0 0 0 1px #b93802 inset, 0 0 0 1px rgba(255,255,255,0.15) inset, 0 1px 3px 1px rgba(0,0,0,0.3);
-    background-color: #D73814;
-}
-.btn3d.btn-magick {
+  }
+  .btn3d.btn-success:active,
+  .btn3d.btn-success.active {
+    box-shadow: 0 0 0 1px #30cd00 inset,
+      0 0 0 1px rgba(255, 255, 255, 0.15) inset,
+      0 1px 3px 1px rgba(0, 0, 0, 0.3);
+    background-color: #78d739;
+  }
+  .btn3d.btn-info {
+    box-shadow: 0 0 0 1px #00a5c3 inset,
+      0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 8px 0 0 #348fd2,
+      0 8px 8px 1px rgba(0, 0, 0, 0.5);
+    background-color: #39b3d7;
+  }
+  .btn3d.btn-info:active,
+  .btn3d.btn-info.active {
+    box-shadow: 0 0 0 1px #00a5c3 inset,
+      0 0 0 1px rgba(255, 255, 255, 0.15) inset,
+      0 1px 3px 1px rgba(0, 0, 0, 0.3);
+    background-color: #39b3d7;
+  }
+  .btn3d.btn-warning {
+    box-shadow: 0 0 0 1px #d79a47 inset,
+      0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 8px 0 0 #d79a34,
+      0 8px 8px 1px rgba(0, 0, 0, 0.5);
+    background-color: #feaf20;
+  }
+  .btn3d.btn-warning:active,
+  .btn3d.btn-warning.active {
+    box-shadow: 0 0 0 1px #d79a47 inset,
+      0 0 0 1px rgba(255, 255, 255, 0.15) inset,
+      0 1px 3px 1px rgba(0, 0, 0, 0.3);
+    background-color: #feaf20;
+  }
+  .btn3d.btn-danger {
+    box-shadow: 0 0 0 1px #b93802 inset,
+      0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 8px 0 0 #aa0000,
+      0 8px 8px 1px rgba(0, 0, 0, 0.5);
+    background-color: #d73814;
+  }
+  .btn3d.btn-danger:active,
+  .btn3d.btn-danger.active {
+    box-shadow: 0 0 0 1px #b93802 inset,
+      0 0 0 1px rgba(255, 255, 255, 0.15) inset,
+      0 1px 3px 1px rgba(0, 0, 0, 0.3);
+    background-color: #d73814;
+  }
+  .btn3d.btn-magick {
     color: #fff;
-    box-shadow:0 0 0 1px #9a00cd inset, 0 0 0 2px rgba(255,255,255,0.15) inset, 0 8px 0 0 #9823d5, 0 8px 8px 1px rgba(0,0,0,0.5);
-    background-color:#bb39d7;
-}
-.btn3d.btn-magick:active, .btn3d.btn-magick.active {
-    box-shadow:0 0 0 1px #9a00cd inset, 0 0 0 1px rgba(255,255,255,0.15) inset, 0 1px 3px 1px rgba(0,0,0,0.3);
+    box-shadow: 0 0 0 1px #9a00cd inset,
+      0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 8px 0 0 #9823d5,
+      0 8px 8px 1px rgba(0, 0, 0, 0.5);
     background-color: #bb39d7;
-}
-/* End of sourced code */
+  }
+  .btn3d.btn-magick:active,
+  .btn3d.btn-magick.active {
+    box-shadow: 0 0 0 1px #9a00cd inset,
+      0 0 0 1px rgba(255, 255, 255, 0.15) inset,
+      0 1px 3px 1px rgba(0, 0, 0, 0.3);
+    background-color: #bb39d7;
+  }
+  /* End of sourced code */
 </style>
 
-{% endblock %}
-
-
-
-{% block baseHTML %}
+{% endblock %} {% block baseHTML %}
 <div class="container-fluid">
-	<div class="row">
-		<div class="col-md-4">
-			<div class="row">
-				<div class="col-md-2">
-					<h3>
-						Virus:
-					</h3>
-				</div>
-				<div class="col-md-10">
-					<img id="virus_image" alt="Bootstrap Image Preview" src="/static/images/virus/flu.png" width="250" height="250" class="d-inline-block align-top" />
-                    <br><br><br>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="row">
+        <div class="col-md-2">
+          <h3>Virus:</h3>
+        </div>
+        <div class="col-md-10">
+          <img
+            id="virus_image"
+            alt="Bootstrap Image Preview"
+            src="/static/images/virus/flu.png"
+            width="250"
+            height="250"
+            class="d-inline-block align-top"
+          />
+          <br /><br /><br />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-2">
+          <h3>Stage:</h3>
+        </div>
+        <div class="col-md-10">
+          <img
+            id="stage_image"
+            alt="Bootstrap Image Preview"
+            src="/static/images/stage/stage_1.png"
+            width="250"
+            height="250"
+            class="d-inline-block align-top"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="row">
+        <div class="col-md-2">
+          <h3>Current Player</h3>
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-md-9">
+          <h3 id="player_text" style="color: red">Player 1</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-2">
+          <h3>ATP:</h3>
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-md-9">
+          <br /><br />
+          <h3 id="atp_text" style="color: darkgreen">0</h3>
+          <br />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-2">
+          <h3>Notification:</h3>
+        </div>
+        <div class="col-md-10">
+          <br /><br />
+          <div id="notification_text" style="color: blue">
+            Player 1 Start, click Draw!
+          </div>
+          <br />
+        </div>
+      </div>
 
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-2">
-					<h3>
-					    Stage:
-					</h3>
-				</div>
-				<div class="col-md-10">
-					<img id="stage_image" alt="Bootstrap Image Preview" src="/static/images/stage/stage_1.png" width="250" height="250" class="d-inline-block align-top" />
-				</div>
-			</div>
-		</div>
-		<div class="col-md-4">
-			<div class="row">
-				<div class="col-md-2">
-					<h3>
-						Current Player
-					</h3>
-				</div>
-                <div class = "col-md-1">
-
-                </div>
-				<div class="col-md-9">
-                    <h3 id="player_text" style="color:red" >
-                        Player 1
-                    </h3>
-                    
-				</div>
-			</div>
-            <div class="row">
-				<div class="col-md-2">
-					<h3>
-						ATP:
-					</h3>
-                    
-				</div>
-                <div class = "col-md-1">
-
-                </div>
-				<div class="col-md-9">
-                    <br><br>
-                    <h3 id="atp_text" style="color:darkgreen" >
-                        0
-                    </h3>
-                    <br>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-2">
-					<h3>
-						Notification:
-					</h3>
-                    
-				</div>
-				<div class="col-md-10">
-                    <br><br>
-                    <div id="notification_text" style="color: blue">
-                        Player 1 Start, click Draw!
-                    </div>
-                    <br>
-				</div>
-			</div>
-			
-            <div class="row">
-				<div class="col-md-12">
-					<img alt="Bootstrap Image Preview" id="cover" src="/static/images/card/cover.png"  width="250" height="400" class="d-inline-block align-top" />
-				</div>
-			</div>
-		</div>
-		<div class="col-md-4">
-			<div class="row">
-                <div class="col-md-2">
-				</div>
-				<div class="col-md-8">
-					<h3 style="color: darkgreen">
-						Actions:
-					</h3>
-				</div>
-                <div class="col-md-2">
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-2">
-				</div>
-				<div class="col-md-8">     
-                    <!--
+      <div class="row">
+        <div class="col-md-12">
+          <img
+            alt="Bootstrap Image Preview"
+            id="cover"
+            src="/static/images/card/cover.png"
+            width="250"
+            height="400"
+            class="d-inline-block align-top"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+          <h3 style="color: darkgreen">Actions:</h3>
+        </div>
+        <div class="col-md-2"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+          <!--
                         Source: https://bootsnipp.com/snippets/ZkPOn
-                    -->               
-                    <button type="button" class="btn btn-primary btn-sm btn3d" id="draw_button" >Draw</button>
-                    <br>
-                    <button type="button" class="btn btn-primary btn-sm btn3d" id="stage_button">Advance (next stage)</button>
-                    <br>
-                    <button type="button" class="btn btn-primary btn-sm btn3d" id="play_button">Play Card</button>
-                    <br>
-                    <button type="button" class="btn btn-primary btn-sm btn3d" id="turn_button">End Turn</button>
-                    <br>
+                    -->
+          <button
+            type="button"
+            class="btn btn-primary btn-sm btn3d"
+            id="draw_button"
+          >
+            Draw
+          </button>
+          <br />
+          <button
+            type="button"
+            class="btn btn-primary btn-sm btn3d"
+            id="stage_button"
+          >
+            Advance (next stage)
+          </button>
+          <br />
+          <button
+            type="button"
+            class="btn btn-primary btn-sm btn3d"
+            id="turn_button"
+          >
+            End Turn
+          </button>
+          <br />
+        </div>
+        <div class="col-md-2"></div>
+      </div>
+    </div>
+  </div>
+  <br /><br />
+  <div class="row">
+    <div class="col-md-4"></div>
 
-				</div>
-				<div class="col-md-2">
-				</div>
-			</div>
-		</div>
-	</div>
-    <br><br>
-	<div class="row">
-		<div class="col-md-4">
-		</div>
-        
-		<div class="col-md-4">
-			<div class="row">
-				<div class="col-md-12">
-					<h1>
-						Hand:
-					</h1>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-12" id="hand">
-                </div>
-			</div>
-		</div>
-		<div class="col-md-4">
-		</div>
-	</div>
-</div>    
-
+    <div class="col-md-4">
+      <div class="row">
+        <div class="col-md-12">
+          <h1>Hand:</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12" id="hand"></div>
+      </div>
+    </div>
+    <div class="col-md-4"></div>
+  </div>
+</div>
 
 {% endblock %}
-
-
-
-
