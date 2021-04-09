@@ -98,6 +98,7 @@ $(document).ready(function () {
         $("#player_text").html("Player 2");
         $("#virus_image").attr("src", playerTwo["virusImage"]);
         $("#stage_image").attr("src", playerTwo["stageImage"]);
+        $("#atp_text").html(playerTwo["atp"]);
         //Now I need to update the backend side
         updatePlayer(playerOne, 1, true);
       } else {
@@ -110,6 +111,8 @@ $(document).ready(function () {
         $("#player_text").html("Player 1");
         $("#virus_image").attr("src", playerOne["virusImage"]);
         $("#stage_image").attr("src", playerOne["stageImage"]);
+        $("#atp_text").html(playerOne["atp"]);
+
         // Now I need to update the backend side
         updatePlayer(playerTwo, 2, true);
       }
