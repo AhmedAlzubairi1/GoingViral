@@ -45,6 +45,8 @@ $(document).ready(function () {
           console.log(request);
           console.log(status);
           console.log(error);
+          //On error, call again
+          $("#draw_button").trigger("click");
         },
       });
     } else {
@@ -223,6 +225,8 @@ $(document).ready(function () {
         }
       },
       error: function (request, status, error) {
+        //If I get error, call request again...
+        $("#stage_button").trigger("click");
         console.log("Error");
         console.log(request);
         console.log(status);
@@ -255,6 +259,8 @@ function updatePlayer(player, number) {
       console.log(request);
       console.log(status);
       console.log(error);
+      //If error, call request again
+      updatePlayer(player, number);
     },
   });
 }
@@ -384,6 +390,8 @@ function playAntibiotic(index, player, card) {
       console.log(request);
       console.log(status);
       console.log(error);
+      //If error in request, call again
+      playAntibiotic(index, player, card);
     },
   });
 }
@@ -426,6 +434,8 @@ function playCoinfection(index, player, card) {
       console.log(request);
       console.log(status);
       console.log(error);
+      //If error on request, call it again
+      playCoinfection(index, player, card);
     },
   });
 }
@@ -511,6 +521,9 @@ function playNoVaccine(index, player, card) {
       },
       error: function (request, status, error) {
         console.log("Error");
+        //On error, call again but make sure to set back to true
+        card["immediate"] = true;
+        playNoVaccine(index, player, card);
       },
     });
   } else {
@@ -561,6 +574,8 @@ function playQuarantine(index, player, card) {
       console.log(request);
       console.log(status);
       console.log(error);
+      //On error call again
+      playQuarantine(index, player, card);
     },
   });
 }
@@ -617,6 +632,9 @@ function playRapidGrowth(index, player, card) {
         console.log(request);
         console.log(status);
         console.log(error);
+        //On error call again
+        player["atp"] = initialATP;
+        playRapidGrowth(index, player, card);
       },
     });
   } else {
