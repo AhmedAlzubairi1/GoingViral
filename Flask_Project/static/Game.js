@@ -302,9 +302,9 @@ function immediateExist(player) {
 }
 function hold(index) {
   if (current_player == 1) {
-    playerOne["hand"][0]["immediate"] = false;
+    playerOne["hand"][index]["immediate"] = false;
   } else {
-    playerTwo["hand"][0]["immediate"] = false;
+    playerTwo["hand"][index]["immediate"] = false;
   }
 }
 function playCard(index) {
