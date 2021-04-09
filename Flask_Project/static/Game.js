@@ -521,7 +521,7 @@ function playNoVaccine(index, player, card) {
       playATP(playerOne, card);
       loadhand(playerOne["hand"]);
     } else {
-      playerATP(playerTwo, card);
+      playATP(playerTwo, card);
       loadhand(playerTwo["hand"]);
     }
   }
