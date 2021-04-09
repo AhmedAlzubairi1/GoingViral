@@ -17,9 +17,9 @@ class Player():
         self.hand = []
         self.stage = 0
         self.atp = 0
-        self.player = player
-        self.virus = virus
-        self.virusImage = self.findVirusImage(virus)
+        self.player = int(player)
+        self.virus = str(virus)
+        self.virusImage = self.findVirusImage(self.virus)
         self.stageNumberList = self.setStageCount()
         self.stageImageList = [
             "/static/images/stage/stage_1.png",
@@ -59,7 +59,7 @@ class Player():
         :return: File location of virus image file
         :rtype: str
         """
-        if self.virus == "flu":
+        if virus == "flu":
             return "/static/images/virus/flu.png"
         elif virus == "ebola":
             return "/static/images/virus/ebola.png"
