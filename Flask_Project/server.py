@@ -93,11 +93,13 @@ def update():
     :rtype: dict
     """
     data = request.get_json()
+    temp = Player(str(data["number"]), data["player"]["virus"])
+    temp.update(data["player"])
     if data["number"] == 1:
-        playerOne.update(data["player"])
+        playerOne = temp
         return jsonify(player=json.loads(json.dumps(playerOne.__dict__)))
     else:
-        playerTwo.update(data["player"])
+        playerTwo = temp
         return jsonify(player=json.loads(json.dumps(playerTwo.__dict__)))
 
 
