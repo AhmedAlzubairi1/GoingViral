@@ -98,6 +98,8 @@ $(document).ready(function () {
         $("#player_text").html("Player 2");
         $("#virus_image").attr("src", playerTwo["virusImage"]);
         $("#stage_image").attr("src", playerTwo["stageImage"]);
+        console.log("Player 2 atp text says its supposed to be");
+        console.log(playerTwo["atp"]);
         $("#atp_text").html(playerTwo["atp"]);
         //Now I need to update the backend side
         updatePlayer(playerOne, 1, true);
@@ -111,6 +113,8 @@ $(document).ready(function () {
         $("#player_text").html("Player 1");
         $("#virus_image").attr("src", playerOne["virusImage"]);
         $("#stage_image").attr("src", playerOne["stageImage"]);
+        console.log("Player 1 atp text says its supposed to be");
+        console.log(playerOne["atp"]);
         $("#atp_text").html(playerOne["atp"]);
 
         // Now I need to update the backend side
@@ -253,7 +257,10 @@ function updatePlayer(player, number) {
     success: function (result) {
       if (number == 1) {
         playerOne = result["player"];
+        console.log("UpdatePlayer returning player 1");
       } else {
+        console.log("UpdatePlayer returning player 1");
+
         playerTwo = result["player"];
       }
     },
