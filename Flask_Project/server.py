@@ -137,7 +137,7 @@ def quarantine():
     :rtype: dict
     """
     data = request.get_json()
-    if data["player"] == 1:
+    if int(data["player"]) == 1:
         # If im playerOne and I have to downgrade, I just give back to the deck the quarantine card.
         playerOne.update(data)
         downGraded = playerOne.quaranine(data)
