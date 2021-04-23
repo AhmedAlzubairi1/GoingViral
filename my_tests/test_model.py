@@ -1,4 +1,5 @@
 from sys import path
+import copy
 from os.path import dirname as dir
 from Flask_Project.model import draw, newDeck
 path.append(dir(path[0]))
@@ -30,7 +31,7 @@ def test_drawOneCardEmpty():  # check to see if it works when people already exi
 def test_newDeck():
     """Tests if you can reset a deck
     """
-    tempCard = [
+    cards = [
         {
             "name": "Quarantine",
             "atp": 0,
@@ -114,15 +115,6 @@ def test_newDeck():
 
         },
         {
-            "name": "2 ATP",
-            "atp": 2,
-            "immediate": False,
-            "hold": False,
-            "treatment": False,
-            "image": "/static/images/card/atp_2.png"
-
-        },
-        {
             "name": "4 ATP",
             "atp": 4,
             "immediate": False,
@@ -186,4 +178,35 @@ def test_newDeck():
 
         }
     ]
-    assert newDeck() == tempCard
+    # tempCard
+    returnedDeck = []
+    returnedDeck.append(cards[0])
+    for _ in range(3):
+        returnedDeck.append(cards[1])
+    for _ in range(3):
+        returnedDeck.append(cards[2])
+    for _ in range(4):
+        returnedDeck.append(cards[3])
+    returnedDeck.append(cards[4])
+    for _ in range(5):
+        returnedDeck.append(cards[5])
+    for _ in range(2):
+        returnedDeck.append(cards[6])
+    for _ in range(2):
+        returnedDeck.append(cards[7])
+    returnedDeck.append(cards[8])
+    for _ in range(18):
+        returnedDeck.append(cards[9])
+    for _ in range(23):
+        returnedDeck.append(cards[10])
+    for _ in range(14):
+        returnedDeck.append(cards[11])
+    for _ in range(8):
+        returnedDeck.append(cards[12])
+    for _ in range(5):
+        returnedDeck.append(cards[13])
+    returnedDeck.append(cards[14])
+    returnedDeck.append(cards[14])
+    returnedDeck.append(cards[15])
+
+    assert newDeck() == copy.deepcopy(returnedDeck)
