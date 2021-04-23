@@ -211,29 +211,29 @@ def newDeck():
     15 -> 1
     '''
     returnedDeck.append(cards[0])
-    for i in range(3):
+    for _ in range(3):
         returnedDeck.append(cards[1])
-    for i in range(3):
+    for _ in range(3):
         returnedDeck.append(cards[2])
-    for i in range(4):
+    for _ in range(4):
         returnedDeck.append(cards[3])
     returnedDeck.append(cards[4])
-    for i in range(5):
+    for _ in range(5):
         returnedDeck.append(cards[5])
-    for i in range(2):
+    for _ in range(2):
         returnedDeck.append(cards[6])
-    for i in range(2):
+    for _ in range(2):
         returnedDeck.append(cards[7])
     returnedDeck.append(cards[8])
-    for i in range(18):
+    for _ in range(18):
         returnedDeck.append(cards[9])
-    for i in range(23):
+    for _ in range(23):
         returnedDeck.append(cards[10])
-    for i in range(14):
+    for _ in range(14):
         returnedDeck.append(cards[11])
-    for i in range(8):
+    for _ in range(8):
         returnedDeck.append(cards[12])
-    for i in range(5):
+    for _ in range(5):
         returnedDeck.append(cards[13])
     returnedDeck.append(cards[14])
     returnedDeck.append(cards[14])
