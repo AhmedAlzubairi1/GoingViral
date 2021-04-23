@@ -84,15 +84,6 @@ cards = [
 
     },
     {
-        "name": "2 ATP",
-        "atp": 2,
-        "immediate": False,
-        "hold": False,
-        "treatment": False,
-        "image": "/static/images/card/atp_2.png"
-
-    },
-    {
         "name": "4 ATP",
         "atp": 4,
         "immediate": False,
@@ -199,7 +190,55 @@ def newDeck():
     :rtype: list[dict]
     """
     print(f'new deck is returning type {type(copy.deepcopy(cards))}')
-    return copy.deepcopy(cards)
+    returnedDeck = []
+    # Set the current weights, index of weights should be:
+    '''
+    0 -> 1
+    1 -> 3
+    2 -> 3
+    3 -> 4
+    4 -> 1
+    5 -> 5
+    6 -> 2
+    7 -> 2
+    8 -> 1
+    9 -> 18
+    10 -> 23
+    11 -> 14
+    12 -> 8
+    13 -> 5
+    14 -> 2
+    15 -> 1
+    '''
+    returnedDeck.append(cards[0])
+    for i in range(3):
+        returnedDeck.append(cards[1])
+    for i in range(3):
+        returnedDeck.append(cards[2])
+    for i in range(4):
+        returnedDeck.append(cards[3])
+    returnedDeck.append(cards[4])
+    for i in range(5):
+        returnedDeck.append(cards[5])
+    for i in range(2):
+        returnedDeck.append(cards[6])
+    for i in range(2):
+        returnedDeck.append(cards[7])
+    returnedDeck.append(cards[8])
+    for i in range(18):
+        returnedDeck.append(cards[9])
+    for i in range(23):
+        returnedDeck.append(cards[10])
+    for i in range(14):
+        returnedDeck.append(cards[11])
+    for i in range(8):
+        returnedDeck.append(cards[12])
+    for i in range(5):
+        returnedDeck.append(cards[13])
+    returnedDeck.append(cards[14])
+    returnedDeck.append(cards[14])
+    returnedDeck.append(cards[15])
+    return copy.deepcopy(returnedDeck)
 
 
 def draw(deck, cardSet):
